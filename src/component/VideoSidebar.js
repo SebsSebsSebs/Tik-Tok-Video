@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./VideoSidebar.css";
 import FavoriteIcon from "@material-ui/icons/Favorite";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import MessageIcon from "@material-ui/icons/Message";
 import ShareIcon from "@material-ui/icons/Share";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
-function VideoSidebar() {
+function VideoSidebar({ likes, shares, comments }) {
   const [liked, setLiked] = useState(false);
   return (
     <div className="videoSidebar">
@@ -19,15 +19,15 @@ function VideoSidebar() {
           />
         )}
 
-        <p>20</p>
+        <p>{likes}</p>
       </div>
       <div className="videoSidebar_button">
-        <MailOutlineIcon fontSize="large" />
-        <p>145</p>
+        <MessageIcon fontSize="large" />
+        <p>{comments}</p>
       </div>
       <div className="videoSidebar_button">
         <ShareIcon fontSize="large" />
-        <p>400</p>
+        <p>{shares}</p>
       </div>
     </div>
   );
