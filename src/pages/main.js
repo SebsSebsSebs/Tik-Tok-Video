@@ -20,8 +20,12 @@ function Main() {
     <div className="main">
       <div className="app_videos">
         {videos.map(
-          ({ url, channel, description, song, likes, messages, shares }) => (
+          (
+            { url, channel, description, song, likes, messages, shares },
+            index
+          ) => (
             <Video
+              key={index}
               url={url}
               channel={channel}
               description={description}
