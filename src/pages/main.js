@@ -7,7 +7,7 @@ function main() {
     <div className="main">
       <div className="app_videos">
         <Video />
-        <Video />
+        
       </div>
     </div>
   );
