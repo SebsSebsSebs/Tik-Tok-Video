@@ -10,11 +10,12 @@ dotenv.config();
 
 const app = express();
 
+
+//middleware
 app.use(express.json());
-//set up http only cookie
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "*",
     credentials: true,
   })
 );
@@ -40,6 +41,21 @@ app.post('/video/post',(req,res)=>{
     })
 
 })
+
+//get videos endpoint
+app.get('/video',(req,res)=>{
+
+    Video.find((err,data)=>{
+        if(err){
+            res.status(500).send(err)
+        }else{
+            res.status(200).send(data)
+        }
+
+    })
+
+})
+
 
 //connect to mongoDB
 mongoose.connect(
